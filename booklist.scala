@@ -2,24 +2,18 @@ import scala.collection.mutable.ListBuffer
 import scala.util.Try
 import scala.io.Source
 
-// We provide the Book class, which is used to hold book information.
-// You will use it to make a book list.
 
 case class Book(title : String, author : String, year : Int)
-
-// Your job is to replace all ??? with your own code.
 
 class BookList {
    var list = ListBuffer[Book]()
 
    def addBook(book : Book) : Unit = {
-      // write code to add the book to 'list'.
-      // hint: Use the list add (+=) method
+     list += book
    }
 
    def getNumberOfBooks() : Int = list.length
-      // instructor has done this for you
-      // using it for testing purposes
+      
 
    def printList() : Unit = {
       // write code to printList()
@@ -30,7 +24,15 @@ class BookList {
       val byAuthorList = ListBuffer[String]()
       // return a list of all titles that are written by author
 
-
+      for (i <- list) {
+          
+          if (i.author = author) {
+                byAuthorList += i.title
+          }
+          
+          
+      }
+       
       byAuthorList
    }
 
@@ -38,6 +40,12 @@ class BookList {
       val titles = ListBuffer[String]()
       // return a list of all titles that contain a substring
 
+      for (i <- list) {
+          
+          titles += i.title
+          
+      } 
+       
       titles
    }
 
@@ -46,6 +54,14 @@ class BookList {
       val betweenYearList = ListBuffer[Book]()
       // get all books between two years
 
+        for (i <- list) {
+         
+            
+            
+            
+            
+        }
+       
 
       betweenYearList
    }
